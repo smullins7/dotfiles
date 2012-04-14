@@ -1,0 +1,33 @@
+[ui]
+username = Stephen Mullins <smullins7@gmail.com>
+iles.style
+ignore = ~/.hgignore
+editor = vim
+
+[extensions]
+fetch=
+color=
+pager=
+graphlog=
+hgext.hgshelve=
+
+[alias]
+changelog = log --style=changelog
+purge = revert -a --no-backup
+llog = log --limit 5
+untrack = rm -Af
+pullup = pull -u
+show = log -pr
+
+[color]
+status.added = green
+diff.trailingwhitespace = white_background
+diff.inserted = blue bold
+
+[hooks]
+changegroup = hg diff --stat -r $HG_NODE -r tip
+
+[pager]
+pager = LESS='FSRX' less
+quiet = True
+attend = diff,status,log,qdiff,blame,annotate,pdiff,glog

@@ -1,0 +1,18 @@
+#OS specific
+alias la='ls -la --color=auto'
+alias lh='ls -lh --color=auto'
+alias ll='ls -l --color=auto'
+
+alias gg='grep -Iir --color '
+alias cl='clear'
+alias pp='pwd'
+alias xx='exit'
+alias rr='rm -rf'
+alias pf='ps auxf'
+alias findp='find . -name \*.py'
+alias findj='find . -name \*.java'
+alias untar='tar -xzvf'
+alias vi='vim'
+alias hh='history | tail -35'
+alias hgp='history | grep '
+alias screen='TERM=xterm screen'

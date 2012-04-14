@@ -1,0 +1,11 @@
+
+[user]
+	name = Stephen Mullins
+	email = smullins7@gmail.com
+[core]
+	excludesfile = /home/smullins/.gitignore
+	editor = vim
+[color]
+	ui = true
+[color "diff"]
+	new = blue
