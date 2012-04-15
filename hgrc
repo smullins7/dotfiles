@@ -1,6 +1,5 @@
 [ui]
 username = Stephen Mullins <smullins7@gmail.com>
-iles.style
 ignore = ~/.hgignore
 editor = vim
 
