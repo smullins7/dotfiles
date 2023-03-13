@@ -1,0 +1,16 @@
+remove_branch() {
+    local branch=$1
+    local answer=""
+    vared -p "Delete local branch %B%F{yellow}$branch%f? (%F{green}Y%f/%F{red}n%f): " -c answer
+    echo $answer
+    if [ "$answer:u" = "Y" ] || [ "$answer" = "" ]; then
+      print -P "%F{cyan}$(git branch -D $branch)%f"
+    fi
+}
+
+echo "Switch to repo's default branch and ask to remove all other local branches..."
+DEFAULT_BRANCH=$(git default-branch)
+git checkout --quiet $DEFAULT_BRANCH
+for b in $(git branch | grep -v $DEFAULT_BRANCH); do
+    remove_branch $b
+done

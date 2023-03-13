@@ -1,0 +1,2 @@
+echo "${1}" | jq -R 'split(".") | .[0],.[1] | @base64d | fromjson'
+echo "Signature: $(echo "${1}" | awk -F'.' '{print $3}')"

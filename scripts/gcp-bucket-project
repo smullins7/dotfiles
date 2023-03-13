@@ -1,0 +1,2 @@
+BEARER=$(gcloud auth application-default print-access-token)
+curl -s https://storage.googleapis.com/storage/v1/b/$1 -H "authorization:Bearer $BEARER" | jq .

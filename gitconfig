@@ -1,11 +1,32 @@
-
 [user]
 	name = Stephen Mullins
 	email = smullins7@gmail.com
 [core]
 	excludesfile = /home/smullins/.gitignore
 	editor = vim
-[color]
-	ui = true
-[color "diff"]
-	new = blue
+    pager = less -FRX
+[alias]
+    amend = commit -a --amend
+    br = branch
+    clean-remote = remote prune origin
+    co = commit
+    # note: double quotes dont persist, xargs is to trim leading whitespace
+    default-branch = !git remote show origin | grep 'HEAD branch:' | cut -d : -f 2 | xargs
+    delete-branch = push origin --delete
+    fin = !git fetch -p && git in
+    in = log HEAD..@{u}
+    log-g = log --graph --decorate --all
+    log-me = log --author="Stephen Mullins"
+    log-not = log HEAD --not
+    mff = merge --ff-only
+    out = log @{u}..HEAD
+    pff = pull --ff-only
+    root = rev-parse --show-toplevel
+    rs = reset --soft
+    squash = !git rs $1 && git commit
+    st = status
+    tip = log -1 --name-status
+[init]
+	defaultBranch = main
+[push]
+  autoSetupRemote = true
